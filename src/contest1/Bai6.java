@@ -34,10 +34,10 @@ public class Bai6 {
             }
             Collections.sort(arr);
             
-            int l = arr.size();
+            int s = arr.size();
             int count = 1;
             int c = arr.get(0).end;
-            for(int i = 1; i < l;i++) {
+            for(int i = 1; i < s;i++) {
                 if(arr.get(i).start>=c) {
                     count++;
                     c = arr.get(i).end;

@@ -13,39 +13,39 @@ import java.util.*;
  */
 public class Bai6 {
 
-    static Scanner sc = new Scanner(System.in);
-    static int a[][] = new int[1001][1001];
-    static int n, m;
+    public static Scanner in = new Scanner(System.in);
+    public static int a[][] = new int[1001][1001];
+    public static int n, m;
 
     public static void main(String[] args) {
-        int t = sc.nextInt();
-        while(t-->0) {
+        int t = in.nextInt();
+        while(t-- > 0){
             init();
-            xuly();
+            solve();
         }
     }
 
     public static void init() {
-        n = sc.nextInt();
-        m = sc.nextInt();
+        n = in.nextInt();
+        m = in.nextInt();
+        for (int i = 1; i <= n; i++) {
+            Arrays.fill(a[i], 0);
+        }
         for (int i = 1; i <= m; i++) {
-            int x = sc.nextInt();
-            int y = sc.nextInt();
-
+            int x = in.nextInt();
+            int y = in.nextInt();
             a[x][y] = 1;
             a[y][x] = 1;
-
         }
     }
 
-    public static void xuly() {
+    public static void solve() {
         for (int i = 1; i <= n; i++) {
             System.out.print(i + ": ");
             for (int j = 1; j <= n; j++) {
                 if (a[i][j] == 1) {
                     System.out.print(j + " ");
                 }
-
             }
             System.out.println("");
         }
